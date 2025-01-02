@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome, <span id="username"></span>!</h1>
+
+    <script>
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Extract the 'name' parameter from the URL
+        const userName = urlParams.get('name');
+
+        // Display the username in the <span> element
+        if (userName) {
+            document.getElementById('username').textContent = decodeURIComponent(userName);
+        } else {
+            document.getElementById('username').textContent = "Guest"; // Default if no name parameter
+        }
+    </script>
+</body>
+</html>

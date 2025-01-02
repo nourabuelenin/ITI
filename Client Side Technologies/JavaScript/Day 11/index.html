@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Constructor functions</title>
+</head>
+<body>
+    <script>
+        /////////////////// Question(1) ///////////////////
+        
+        // var Person = {
+        //     name: "Anonymous",
+        //     greet: function() {
+        //         console.log(`Welcome, ${this.name}`);
+        //     }
+        // };
+
+        // var Student = Object.create(Person);
+        // Student.name = "Omar"; 
+        // Student.grade = 80;    // Add a new property specific to student
+
+        // // student1 = new Student("omar", 80)
+
+        // Student.greet(); // Logs: Welcome, Ahmed
+        // console.log(`Grade: ${Student.grade}`); // Logs: Grade: 80      
+
+        /////////////////// Question(2) ///////////////////
+        
+        // function Animal(){
+        //     speak(){
+        //         console.log('This animal makes a sound.');
+        // }};
+
+        // var Dog = Object.create(Animal)
+        // Dog.speak = "The dog barks."
+
+        // // Demonstrating functionality
+        // dog.speak() // Logs: "The dog barks."
+        // animal.speak() // Logs: "This animal makes a sound."
+
+        // // To call `animal`'s `speak` method from `dog`, use `Object.getPrototypeOf`
+        // Object.getPrototypeOf(dog).speak()
+        
+        /////////////////// Question(3) ///////////////////
+
+        // function Car(brand, year){
+        //     this.brand = brand
+        //     this.year = year
+        // }
+
+        // Car.prototype.getAge = function(){
+        //     var age = 2024-this.year
+        //     console.log(age)
+        // }
+
+        // car1 = new Car('mustang', 1997)
+        // car1.getAge();
+
+        /////////////////// Question(4) ///////////////////
+
+        // function Gadget(name) {
+        //     this.name = name;
+        // }
+        // Gadget.prototype.use = function () {
+        //     console.log(this.name + " is now in use.");
+        // };
+        // var phone = new Gadget("Smartphone");
+
+        // console.log(Object.getPrototypeOf(phone))
+        // //OR
+        // phone.__proto__
+
+        /////////////////// Question(5) ///////////////////
+     
+        // var Shape = {
+        //     type: 'generic',
+        //     describe(){
+        //     console.log("This is a generic shape.")
+        // }}
+
+        // var Circle = Object.create(Shape)
+        // Circle.type = 'circle'
+
+        // Circle.describe = function() {
+        //     console.log("This is a circle.")
+        // }
+
+        // Shape.describe()
+        // Circle.describe() 
+        
+        /////////////////// Question(6) ///////////////////
+        
+        // function User(username) {
+        //     this.username = username;
+        // }
+        // User.prototype.role = "guest";
+
+        // var user1 = new User("john_doe");
+
+        // // Check if role is an own property of user1
+        // console.log(user1.hasOwnProperty("role")); // Logs: false
+
+        // // Add a new property email directly to user1
+        // user1.email = "john_doe@example.com";
+
+        // // Iterate over all properties of user1
+        // for (let prop in user1) {
+        //     if (user1.hasOwnProperty(prop)) {
+        //         console.log(`Own property: ${prop} -> ${user1[prop]}`);
+        //     } else {
+        //         console.log(`Inherited property: ${prop} -> ${user1[prop]}`);
+        //     }
+        // }
+
+        /////////////////// Question(7) ///////////////////
+
+        // var baseObject = { a: 10 };
+        // var middleObject = Object.create(baseObject);
+        // middleObject.b = 20;
+
+        // var finalObject = Object.create(middleObject);
+        // finalObject.c = 30;
+
+        // finalObject.a
+        // finalObject.b
+        // finalObject.c
+
+        // console.log(finalObject.hasOwnProperty("a")); // Logs: false
+
+        // baseObject.a = 5 //finalObject is modified
+
+        /////////////////// Question(8) /////////////////// ???????
+
+        function Book(title) {
+            this.title = title;
+        }
+
+        Book.prototype.genre = 'fantasy'
+
+        /////////////////// Question(9) ///////////////////
+
+        // function Library(name, location){
+        //     this.name = name
+        //     this.location = location
+        //     this.books = []
+        // }
+
+        // Library.prototype.addBook = function (bookName){
+        //     this.books.push(bookName)
+        // }
+
+        // // Create a new library instance
+        // var myLibrary = new Library("Central Library", "Downtown");
+
+        // // Add some books to the library
+        // myLibrary.addBook("The Great Gatsby");
+        // myLibrary.addBook("1984");
+        // myLibrary.addBook("To Kill a Mockingbird");
+
+        // // Log the books list
+        // console.log("Books in the library:", myLibrary.books);
+
+</script>
+</body>
+</html> 

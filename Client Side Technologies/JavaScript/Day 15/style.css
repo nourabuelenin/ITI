@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: white;
+    margin: 20px;
+    text-transform: capitalize;
+}
+
+#navbar{
+    /* font-weight: bold; */
+    padding: 5px 20px;
+    margin: 10px;
+}
+
+ul{
+    display: inline-flex;
+    list-style-type: none;
+}
+
+li{
+    padding: 10px;
+}
+
+a:link, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+li:hover{
+    padding: 10px;
+    text-decoration: underline;
+}
+
+#cover>img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#section{
+    background-color: #fdfdf0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+#section>h3{
+    margin: 10px 30px;
+}
+
+/* Featured Section */
+#sample_products{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; 
+    padding: 30px;    
+}
+
+/* Single product CSS */
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%; 
+    position: relative; /* Ensures proper positioning for children */
+}
+
+.product>img{
+    width: auto; 
+    height: auto;
+    max-height: 150px; 
+    max-width: 80%;
+    object-fit: contain; 
+    margin-bottom: 10px; 
+}
+
+.bottom-section>h3 {
+    margin: 10px 0;
+    color: #333;
+    max-height: 2.4em; /* Restrict to 2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.price {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* products page CSS */
+#products{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; 
+    padding: 16px; 
+}
+
+/* Product when opened in a new page */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 50px;
+    margin: 10%;
+    border: 1px solid rgb(55, 55, 55);
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0), -1px -1px 2px rgb(0, 0, 0);
+}
+  
+.product-details>img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.product-details>h1 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+.product-details>p {
+    margin-bottom: 10px;
+    text-align: center;
+}

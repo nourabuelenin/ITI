@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Log In</title>
+</head>
+<body>
+    <div id="pop">
+        <!-- <h2>Welcome</h2> -->
+        <form>
+            <div class="errordiv">   
+                <label for="name">Userame:</label>
+                <p class="errors" id="nameError" style="color: red; display: none;">Invalid Userame</p>
+                <input type="text" id="name" name="name" placeholder="Username">
+            </div>
+            <div class="errordiv">   
+                <label for="name">Email:</label>
+                <p class="errors" id="emailError" style="color: red; display: none;">Invalid Email</p>
+                <input type="text" id="email" name="email" placeholder="example@gmail.com">
+            </div>
+                <div class="errordiv">   
+                <label for="pass">Password:</label>
+                <p class="errors" id="passError" style="color: red; display: none;">Invalid Password</p>
+                <input type="password" id="pass" name="pass" placeholder="Password">
+            </div>
+            <div class="errordiv">
+                <label for="num">Phone Number:</label>
+                <p class="errors" id="numError" style="color: red; display: none;">Invalid Phone Number</p>
+                <input type="number" id="num" name="num" placeholder="phone number">
+            </div>
+            <p for="lang">Languages:</p>
+            <div id="lang">
+                <p id="checkerrorMessage" style="color: red; display: none;">You must select at least 2 options</p>
+                <input type="checkbox" id="eng" name="lang" value="English">
+                <label for="eng">English</label>
+                <!-- <br> -->
+                <input type="checkbox" id="ar" name="lang" value="Arabic">            
+                <label for="ar">Arabic</label>
+                <!-- <br> -->
+                <input type="checkbox" id="fr" name="lang" value="French">
+                <label for="fr">French</label>
+            </div>
+            <p for="gender">Gender:</p>
+            <div id="gender">
+                <p id="radioerrorMessage" style="color: red; display: none;">You must select one</p>
+                <input type="radio" id="mm" name="gender" value="Male">
+                <label for="mm">Male</label>
+                <input type="radio" id="fm" name="gender" value="Female">            
+                <label for="fm">Female</label>
+            </div>
+            <input id = "submit" type="submit" value="Register">    
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener("submit", function(e){
+            var hasErrors = false; // Track if there are any errors
+
+            var emailInput = document.querySelector("#email").value
+            var emailReg = /^[a-zA-Z0-9._%+-]{5,20}@gmail\.com$/
+            var nameInput = document.querySelector("#name").value
+            var nameReg = /^[a-zA-Z0-9]{5,20}$/
+            var passInput = document.querySelector("#pass").value
+            var passReg = /^(?=.*[A-Z])[a-zA-Z0-9._%+-]{1,8}$/
+            var numInput = document.querySelector("#num").value
+            var numReg = /^(012|011|010)\d{8}$/
+
+            emailerrorMessage = document.querySelector("#emailError")
+            nameerrorMessage = document.querySelector("#nameError")
+            passerrorMessage = document.querySelector("#passError")
+            numerrorMessage = document.querySelector("#numError")
+
+            var checkboxes = document.querySelectorAll('input[name="lang"]:checked');
+            var checkerrorMessage = document.getElementById("checkerrorMessage");
+
+            var radiobox = document.querySelector('input[name="gender"]:checked');
+            var radioerrorMessage = document.getElementById("radioerrorMessage");
+
+            // var name = document.querySelector('#name').value;
+
+
+            if (!emailReg.test(emailInput)) {
+                hasErrors = true;
+                emailerrorMessage.style.display = 'inline'
+                e.target.querySelector('#email').style.border = "2px solid #FF0000"
+            } else {
+                emailerrorMessage.style.display = "none"; // Hide the error message if valid    }           
+            }
+
+            if (!nameReg.test(nameInput)) {
+                hasErrors = true;
+                nameerrorMessage.style.display = 'inline'
+                e.target.querySelector('#name').style.border = "2px solid #FF0000"
+            } else {
+                nameerrorMessage.style.display = "none"; // Hide the error message if valid    }           
+            }
+
+            if (!passReg.test(passInput)) {
+                hasErrors = true;
+                passerrorMessage.style.display = 'inline'
+                e.target.querySelector('#pass').style.border = "2px solid #FF0000"
+            } else {
+                passerrorMessage.style.display = "none"; // Hide the error message if valid    }           
+            }
+
+            if (!numReg.test(numInput)) {
+                hasErrors = true;
+                numerrorMessage.style.display = 'inline'
+                e.target.querySelector('#num').style.border = "2px solid #FF0000"
+            } else {
+                numerrorMessage.style.display = "none"; // Hide the error message if valid    }           
+            }
+
+            if (checkboxes.length < 2) { // Minimum 2 checkboxes required
+                hasErrors = true
+                checkerrorMessage.style.display = "inline"; // Show error message
+            } else {
+                checkerrorMessage.style.display = "none"; // Hide error message
+            }
+
+            if (!radiobox) { // If no radio button is selected
+                hasErrors = true;
+                radioerrorMessage.style.display = 'inline'; // Show error message
+            } else {
+                radioerrorMessage.style.display = "none"; // Hide error message
+            }
+
+            // Prevent form submission if there are any errors
+            if (hasErrors) {
+                e.preventDefault();
+            }
+            else{
+                var queryString = "?name=" + encodeURIComponent(nameInput) +
+                          "&email=" + encodeURIComponent(emailInput) +
+                          "&pass=" + encodeURIComponent(passInput) +
+                          "&num=" + encodeURIComponent(numInput) +
+                          "&lang=" + encodeURIComponent(checkboxes.length ? Array.from(checkboxes).map(cb => cb.value).join(',') : '') +
+                          "&gender=" + encodeURIComponent(radiobox ? radiobox.value : '');
+
+                // Use window.open() to open the welcome page with query parameters
+                var newWindow = window.open("welcome.html" + queryString, "_blank");         
+            }
+    // error = document.
+    // function errorMesg(){
+
+    })
+    </script>
+</body>
+</html>
+
+<!-- ^[a-zA-Z0-9._%+-]{5,20}@gmail\.com$ -->

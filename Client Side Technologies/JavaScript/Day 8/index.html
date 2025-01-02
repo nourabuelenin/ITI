@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>To-Do</title>
+</head>
+<body>
+    <div id="head">
+        <h2>To-Do List:</h2>
+        <form>
+            <input type="text" id="taskName" placeholder="Enter Task:">
+            <button id="add" onclick="addBtn()" type="button">Add Task</button>
+        </form>
+    </div>
+    <div id="list-head">
+            <div>
+            <p>ID</p>
+        </div>
+        <div>
+            <p>Task</p>
+        </div>
+        <div>
+            <p>Controls</p>
+        </div>
+        <div>
+            <p>State</p>
+        </div>
+    </div>
+
+    <div id="list">
+        <table id="task">
+
+        </table>
+    </div>
+
+    <script>
+        var input = document.querySelector('#taskName')
+        var btn = document.querySelector('#add')
+        var div = document.querySelector('#task')
+        // var check = document.getElementById('elementId')
+        var currentEditingTask = null; // Variable to store the currently edited task
+
+        var i = 0
+
+        function addBtn(){
+            if (currentEditingTask) {
+                // Update the existing task
+                currentEditingTask.textContent = input.value
+                currentEditingTask = null
+                btn.textContent = "Add Task" // Change button text back to "Add Task"
+            } else {
+
+                // Create a new paragraph element for the task
+                var taskContainer =  document.createElement('tr')
+
+                // Create a new span element for the index
+                var newIndex = document.createElement('td')
+                newIndex.textContent = `${i}`;
+                taskContainer.appendChild(newIndex)
+
+                var newTask = document.createElement('td')
+                newTask.textContent = input.value;
+                taskContainer.appendChild(newTask)
+
+                // Create a button container div
+                var buttonContainer = document.createElement('td')
+
+                // Create the "Edit" and "Delete" buttons
+                var editButton = document.createElement('button')
+                editButton.textContent = 'Edit'
+                editButton.addEventListener('click', editBtn) // Replace with your editBtn function
+
+                var deleteButton = document.createElement('button')
+                deleteButton.textContent = 'Delete'
+                deleteButton.addEventListener('click', delBtn) // Replace with your delBtn function
+
+                
+                // Append the buttons to the button container
+                buttonContainer.appendChild(editButton)
+                buttonContainer.appendChild(deleteButton)
+                taskContainer.appendChild(buttonContainer)
+
+                // Create the "Edit" and "Delete" buttons
+                var checkBox = document.createElement('input')
+                checkBox.type = "checkbox";
+                checkBox.id = "check-box";
+                checkBox.addEventListener('click', stateBox)
+
+                taskContainer.appendChild(checkBox)
+
+                div.appendChild(taskContainer)
+
+                // Increment the index
+                i++;
+                // Clear the input field
+                input.value = '';
+            }
+        }
+
+        function editBtn(e){
+            // var newTask = e.target.parentElement.previousElementSibling
+            // var editInput = document.createElement('input');
+            // editInput.type = 'text';
+            // editInput.value = newTask.textContent;
+            // newTask.textContent = '';
+            // newTask.appendChild(editInput);
+            var taskContent = e.target.parentElement.previousElementSibling
+            input.value = taskContent.textContent
+            currentEditingTask = taskContent
+            btn.textContent = "Update Task" // Change button text to "Update Task"
+
+            //ORR replaceChild???
+
+        }
+
+        function delBtn(e){
+            // var taskContainer =  document.getElementById(index)
+            // taskContainer.remove()
+            e.target.parentElement.parentElement.remove()
+            
+        }
+
+        function stateBox(e){
+            const parentRow = e.target.parentElement
+            const tds = parentRow.querySelectorAll('td');
+            tds.forEach(cell => {
+                cell.style.textDecoration = 'line-through'
+            });
+                
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- // const task = document.createElement('div');
+// task.innerHTML = `
+//     <button onclick="editBtn()">Edit</button>
+//     <button onclick="delBtn()">Delete</button>
+//     </div>
+// `;
+// buttons.appendChild(task); -->

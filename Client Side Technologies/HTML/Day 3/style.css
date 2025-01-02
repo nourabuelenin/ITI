@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(52, 52, 52);
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding: 30px;
+}
+
+p, h2{
+    margin: 20px;
+    line-height: 1.6;
+}
+
+#navbar { 
+    position: sticky;
+    top: 0;
+    background-color: rgb(52, 52, 52);
+    color: white;
+    padding: 15px;
+}
+
+#navbar > ul > li{
+    display: inline-block;
+    padding: 5px;
+  }
+
+#navbar > ul > li > a:link {
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    text-decoration: none;
+}
+
+#navbar > ul > li > a:visited {
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+#navbar > ul > li > a:hover {
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+#navbar > ul {
+    text-align: center;
+    list-style-type: none;
+
+}
+
+#about{
+    font-family: Arial;
+    text-align: center;
+    margin: 35px 0px;
+    padding: 0 150px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#skills { 
+    background-color: #ececec;
+    color: rgb(52, 52, 52);
+    font-weight: bold;
+    padding: 25px;
+    font-family: Arial;
+    text-align: center;
+}
+
+#skills > div > ul > li{
+    display: inline-block;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #8d8d8d;
+
+  }
+
+#projects{
+    font-family: Arial;
+    line-height: 1.6;
+    text-align: center;
+    margin: 35px 0px;
+}
+
+#projects > div > div > div{
+    display: inline-block;
+    width: 25%;
+    margin: 10px;
+    padding: 10px 0px;
+    background-color: #fafafa;
+    border: 1px solid #a1a0a0;
+    border-radius: 7px;
+    box-shadow: 1px 2px 5px #8d8d8d;
+}
+
+#projects > div > div > div > a:link {
+    color:rgb(0, 89, 255);
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+#contact {
+    font-family: Arial;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#contact > div > ul > li{
+    margin: 10px;
+    list-style-type: none;
+}
+
+#contact > div > ul > li > a:link {
+    color:rgb(0, 89, 255);
+    text-decoration: none;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding: 1px;
+}

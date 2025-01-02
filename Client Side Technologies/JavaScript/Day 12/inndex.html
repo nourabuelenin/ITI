@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var array = [1, 2, 3, 4]
+
+        // function filterAndTransform(array, filterArray, transformArray){
+        //     return array.filter(filterArray).map(transformArray)
+        // }
+
+        // var filterArray = value => {
+        //     return value %2 ==0}
+
+        // var transformArray = value => {
+        //     return value*2}
+
+        // var result = filterAndTransform(array, filterArray, transformArray)
+        // console.log(result);
+
+        // // var filterArray = (value, index, array) => {
+        // //     return value %2 ==0}
+
+        // // var transformArray = (value, index, array) => {
+        // //     return value*2}
+
+        /////// 2 ///////
+
+        // var numbers = [1, 2]
+        // console.log("Array numbers: " + numbers)
+        // [numbers[0], numbers[1]] = [numbers[1], numbers[0]]
+        // console.log("Array numbers: " + numbers)
+
+        ////أنا عارفه الlogic صح بس مش راضية تrun
+
+        /////// 3 ///////
+        
+        const nested = [[1, 2], [3, 4], [5]]
+        var array = []
+        for (i=0; i<nested.length; i++){
+            array.push(...nested[i])
+        }
+
+        console.log(array)
+
+    </script>
+</body>
+</html>

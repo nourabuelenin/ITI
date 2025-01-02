@@ -1,0 +1,56 @@
+* {
+    font-family: Arial;
+}
+
+h1 {
+    color: blue;
+}
+
+.intro {
+    background-color: lightyellow;
+}
+
+#container {
+    border: 2px solid black;
+}
+
+ul, footer {
+    margin-top: 20 px;
+}
+
+ul li {
+    font-size: 18px;
+}
+
+div > p {
+    color: green;
+}
+
+.box + a {
+    font-weight: bold;
+}
+
+#container a {
+    text-decoration: underline dashed;
+  }
+
+#special-link {
+    color: purple;
+}
+
+a:hover {
+    background-color: lightblue;
+}
+
+li:nth-child(even){
+    background-color: lightseagreen;
+}
+
+.note::before {
+    content: "NOTE: ";
+    font-weight: bold;
+}
+
+.special::after {
+    content: "(special)";
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // //1
+        // var arr = [10, 20, 30, 40, 50]
+
+        // for (ele of arr){
+        //     console.log(ele)
+        // }
+        // console.log(arr[0])
+        // console.log(arr[arr.length-1])
+
+        // //2
+        // arr.push(60)
+        // arr.shift()
+        // for (ele of arr){
+        //     console.log(ele)
+        // }
+
+        // //3
+        // function printArray(arr){
+        //     for (ele of arr){
+        //     console.log(ele)
+        //     }
+        // }
+        // var arr = [10, 20, 30, 40, 50]
+        // printArray(arr); 
+
+        // //4
+        // function findMax(arr){
+        //     max = arr[0]
+        //     for (i=0; i<arr.length; i++){
+        //         if (max < arr[i]){
+        //             max = arr[i]
+        //         }
+        //     }
+        //     console.log(max)
+        // }
+        // findMax([10, 50, 40, 30, 20]); 
+
+        // //5
+        // function sumArray(arr){
+        // sum = 0
+        //     for (i=0; i<arr.length; i++){
+        //         sum += arr[i]
+        //     }
+        // console.log(sum)
+        // }
+        // sumArray([10, 50, 40, 30, 20]); 
+
+        // //6
+        // function filterEven(arr){
+        //     for (i=0; i<arr.length; i++){
+        //         if (arr[i]%2 != 0){
+        //             continue
+        //         }
+        //         console.log(arr[i])
+        //     }
+        // }
+        // filterEven([10, 15, 20, 25, 30]);
+
+        // //7
+        // function countGreaterThan25(arr){
+        //     count = 0
+        //     for (i=0; i<arr.length; i++){
+        //         if (arr[i] > 25){
+        //             count++
+        //         }
+        //     }
+        //     console.log(count)
+        // }
+        // countGreaterThan25([10, 20, 30, 40, 50]);
+
+        // //8
+        // function removeDuplicates(arr){
+        //     for (i=0; i<arr.length; i++){
+        //         if (arr[i] == arr[i-1]){
+        //             continue
+        //         }
+        //         console.log(arr[i])
+        //     }
+        // }
+        // removeDuplicates([1, 2, 2, 3, 3, 4]);
+
+        //OR
+        // function removeDuplicates(arr){
+        //     for (i=0; i<arr.length; i++){
+        //         for (j=0; j<arr.length; j++){
+        //             if (arr[i] == arr[j]){
+        //                 continue
+        //             }
+        //         }
+        //         console.log(arr[i])
+        //     }
+        // }
+        // removeDuplicates([1, 2, 2, 3, 3, 4]);
+
+   ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+//    Part 2
+///////////////////////
+        // var arr = []
+        // function addName(name){
+        //     arr.push(name)
+        //     console.log(name + " has been added.")
+        //     console.log(name + " is number " + arr.indexOf(name))
+        // }
+
+        // function updateName(name, newName){
+        //     i = arr.indexOf(name)
+        //     arr.splice(i, 1, newName) 
+        //     console.log(name + " has been updated to " + newName)
+        // }
+
+        // function deleteName(name){
+        //     i = arr.indexOf(name)
+        //     arr.splice(i, 1) 
+        //     console.log(name + " has been removed.")
+        // }
+
+/////OR
+
+        var nameList = []
+            function addName(name) {
+                nameList.push(name)
+                displayNames()
+            }
+            
+            function updateNames(index, newName) {
+                if (index >= 0 && index < nameList.length) {
+                    arr.splice(index, 1, newName) 
+                    console.log(name + " has been updated to " + newName)
+                } else {
+                    console.log('Invalid index')
+                }
+            }
+
+            function removeName(index) {
+                if (index >= 0 && index < nameList.length) {
+                    nameList.splice(index, 1)
+                    displayNames()
+                } else {
+                    console.log('Invalid index')
+                }
+            }
+
+            function displayNames() {
+                if (nameList.length == 0) {
+                    console.log('No names available')
+                } else {
+                    for (var i = 0; i < nameList.length; i++) {
+                        console.log((i+1) + " " + nameList[i])
+                    }
+                }
+            }
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+.gif {
+    position: absolute;
+    animation: movearound 5s linear infinite;
+}
+
+.gif:hover {
+    animation: movearound 5s linear infinite reverse; /* Change direction on hover */
+}
+
+@keyframes movearound {
+    0% {
+        transform: translateX(0) scaleX(1); 
+    }
+    50% {
+        transform: translateX(100vw) scaleX(1); /* Move to the right edge */
+    }
+    100% {
+        transform: translateX(0) scaleX(-1); /* Return to the left edge, flipped horizontally */
+    }
+}
